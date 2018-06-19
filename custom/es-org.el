@@ -2,8 +2,8 @@
 
 (setq org-base "~/Dropbox/Private/org/")
 (setq org-agenda-files (file-expand-wildcards
-                        (concat org-base "*.org")))
-(setq org-default-notes-file (concat org-base "notes.org"))
+                        (concat org-base "agenda/*.org")))
+(setq org-default-notes-file (concat org-base "agenda/notes.org"))
 
 (setq org-journal-file-format "%Y%m%d.org")
 (setq org-journal-dir (concat org-base "journal/"))
