@@ -43,8 +43,10 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     lua
      ivy
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t)
      better-defaults
      emacs-lisp
      git
@@ -84,6 +86,7 @@ This function should only modify configuration layer settings."
      org-journal
      fountain-mode
      easy-jekyll
+     magithub
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -467,6 +470,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require `es-org)
   (require `es-csharp)
+  (require `es-git)
   )
 
 (load-file custom-file)
