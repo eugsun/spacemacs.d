@@ -25,4 +25,11 @@
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "|" "DONE")))
 
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+         "* TODO %?\n  %i\n")
+        ("n" "Note" entry (file+headline org-default-notes-file "Notes")
+         "* %?\n  Entered on %U  %i\n")))
+
+
 (provide `es-org)
