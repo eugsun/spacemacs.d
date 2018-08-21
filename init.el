@@ -34,8 +34,7 @@ This function should only modify configuration layer settings."
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
-
-   ;; List of configuration layers to load.
+;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
      ;; ----------------------------------------------------------------
@@ -83,6 +82,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     ssh-agency
      org-journal
      fountain-mode
      easy-jekyll
