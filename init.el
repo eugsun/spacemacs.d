@@ -2,6 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(setq gc-cons-threshold 300000000)
+
 (setq custom-file "~/.spacemacs.d/spam.el")
 ;; (setenv "PATH" (concat (getenv "PATH") ":/Library/Frameworks/Mono.framework/Versions/Current/Commands"))
 ;; (setq exec-path (append exec-path '("/Library/Frameworks/Mono.framework/Versions/Current/Commands")))
@@ -72,6 +74,8 @@ This function should only modify configuration layer settings."
      javascript
      html
      python
+     spotify
+     latex
      )
 
    ;; List of additional packages that will be installed without being
@@ -86,10 +90,12 @@ This function should only modify configuration layer settings."
      org-journal
      fountain-mode
      easy-jekyll
-     magithub
+     ;; magithub
      writegood-mode
      olivetti
      exec-path-from-shell
+     ;; ein                                ; jupyter-notebook interface
+     vue-mode
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -476,6 +482,9 @@ before packages are loaded."
   (require `es-csharp)
   (require `es-git)
   (require `es-jekyll)
+  (require `es-lua)
   )
 
 (load-file custom-file)
+
+(setq gc-cons-threshold 1000000)
