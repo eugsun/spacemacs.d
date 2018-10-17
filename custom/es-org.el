@@ -15,12 +15,18 @@
                                  (org-agenda-files :maxlevel . 9))))
 
 (setq org-agenda-custom-commands
-      '(("h" "Home View"
-         ((tags "PRIORITY=\"A\""
+      '(
+        ("h" "Home View"
+         (
+          (tags "PRIORITY=\"A\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "High-Priority Items:")))
+          (tags "plan" ((org-agenda-overriding-header "Plan")))
           (agenda "")
-          (alltodo '(:timestamp))))))
+          (alltodo '(:timestamp))
+          )
+         )
+        ))
 
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "|" "DONE")))
@@ -31,5 +37,6 @@
         ("n" "Note" entry (file+headline org-default-notes-file "Notes")
          "* %?\n  Entered on %U  %i\n")))
 
+(add-hook 'org-mode-hook 'olivetti-mode)
 
 (provide `es-org)
