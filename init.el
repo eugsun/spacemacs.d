@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
      better-defaults
      emacs-lisp
      git
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      org
      csharp
      ;; (shell :variables
@@ -69,14 +69,19 @@ This function should only modify configuration layer settings."
      ;; -----------
      ;; New Entries
      ;; -----------
+     sql
      yaml
      javascript
      html
      python
      spotify
      latex
+     clojure
+     elm
+     react
+     docker
+     terraform
      )
-
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -96,6 +101,7 @@ This function should only modify configuration layer settings."
      exec-path-from-shell
      ;; ein                                ; jupyter-notebook interface
      vue-mode
+     ink-mode
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
