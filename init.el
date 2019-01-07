@@ -59,6 +59,7 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      (org :variables
           org-enable-org-journal-support t
+          org-enable-reveal-js-support t
           org-modules '(org-habit))
      (shell :variables
             shell-default-height 30
@@ -81,6 +82,7 @@ This function should only modify configuration layer settings."
      react
      docker
      terraform
+     pandoc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -476,6 +478,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included
 in the dump."
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
   )
 
 (defun dotspacemacs/user-config ()
@@ -484,6 +488,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (require `es-writer)
   (require `es-org)
   (require `es-csharp)
   (require `es-git)
